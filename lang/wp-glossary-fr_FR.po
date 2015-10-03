@@ -111,6 +111,9 @@ msgstr "Nouvel onglet"
 msgid "Always open in a new tab"
 msgstr "Toujours ouvrir dans un nouvel onglet"
 
+msgid "Glossary URL"
+msgid "URL du glossaire"
+
 #: class/wpg-admin.class.php:91
 msgid "On"
 msgstr "Actif"
@@ -146,6 +149,9 @@ msgstr "Mettre à jour les optons du glossaire"
 #: class/wpg-admin.class.php:137
 msgid "Glossary options updated"
 msgstr "Options du glossaire mises à jour"
+
+msgid "Rewrite rule flushed"
+msgstr "Règles de réécritude modifiées"
 
 #: class/wpg-post-types.class.php:17
 msgid "Glossary Terms"

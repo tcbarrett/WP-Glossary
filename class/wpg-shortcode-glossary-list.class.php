@@ -20,7 +20,7 @@ class WPG_Shortcode_TERMLIST Extends WPG{
     endif;
 
 		$args = array(
-			'post_type'           => 'glossary',
+			'post_type'           => "glossary",
 			'posts_per_page'      => '-1',
 			'orderby'             => 'title',
 			'order'               => 'ASC',

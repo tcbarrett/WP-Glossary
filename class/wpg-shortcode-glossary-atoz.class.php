@@ -1,6 +1,10 @@
 <?php
 class WPG_Shortcode_ATOZ Extends WPG{
+    public static $options;
+    
 	public function __construct() {
+        self::$options = get_option( 'wp_glossary' );
+        self::$options["termtype"] = is_string(self::$options["termtype"]) ? self::$options["termtype"] : "glossary";
 		add_shortcode( 'glossary_atoz', array($this, 'glossary_atoz') );
 	}
 
@@ -31,7 +35,7 @@ class WPG_Shortcode_ATOZ Extends WPG{
 		endif;
 
 		$args = array(
-			'post_type'           => 'glossary',
+			'post_type'           => "glossary",
 			'posts_per_page'      => '-1',
 			'orderby'             => 'title',
 			'order'               => 'ASC',

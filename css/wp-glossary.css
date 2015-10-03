@@ -1,68 +1,103 @@
 /* A-Z shortcode */
 .glossary-menu-atoz{
-  text-transform: uppercase;
-  margin: auto;
-  padding: 0;
-  border-bottom: 2px solid #000;
-  width: 100%;
-  height: 25px;
+    text-transform: uppercase;
+    margin: auto;
+    padding: 0;
+    border-bottom: 2px solid #000;
+    width: 100%;
+    height: 25px;
 }
 .glossary-menu-atoz .glossary-menu-item{
-  /* display: inline; */
-  list-style: none;
-  float: left;
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  height: 22px;
-	margin: 0 0 0 0.5em;
+    /* display: inline; */
+    list-style: none;
+    float: left;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    height: 22px;
+    margin: 0 0 0 0.5em;
 }
 
 .glossary-menu-item a{
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .atozmenu-empty{
-  color: #ccc;
+    color: #ccc;
 }
 .atozmenu-off{
-  color: #333;
+    color: #333;
 }
 .atozmenu-off:hover{
-  background-color: #333;
-  color: #eee;
+    background-color: #333;
+    color: #eee;
 }
 .atozmenu-on{
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .atozitems-off{
-  display: none;
+    display: none;
 }
 
 /* Popup tooltip */
 .tooltip {
-  display:     none;
-  background:  #f4f4f4;
-  font-size:   1.1em;
-  padding:     10px;
-  color:       #333;
-  border:      1px solid #ddd;
-  line-height: 1.5em;
-  width:       20%;
+    display:     none;
+    background:  #f4f4f4;
+    font-size:   1.1em;
+    padding:     10px;
+    color:       #333;
+    border:      1px solid #ddd;
+    line-height: 1.5em;
+    width:       20%;
 }
 /*
 .tooltip {
-	display:      none;
-	background:   #eee;
-	font-size:    0.8em;
-	height:       90px;
-	width:        220px;
-	padding:      15px;
-	color:        #222;
-	overflow:     hidden;
-	border-top:   1px dotted #333;
-	border-left:  1px dotted #333;
-	border-right: 1px dotted #333;
+display:      none;
+background:   #eee;
+font-size:    0.8em;
+height:       90px;
+width:        220px;
+padding:      15px;
+color:        #222;
+overflow:     hidden;
+border-top:   1px dotted #333;
+border-left:  1px dotted #333;
+border-right: 1px dotted #333;
 }
 */
+#glossary-index{
+    margin: 15px auto;
+}
+#glossary-index header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: stretch;
+}
+#glossary-index header p.tileHead{
+    flex: 1 1 auto;
+    margin:5px 2.5px;
+    padding: 5px;
+    background: #ffffff;
+    color: #999999;
+    border: 1px solid #999999;
+    line-height: 1;
+    text-align: center;
+}
+#glossary-index header p.tile[data-hasglossaryItem]{
+    color: #fff;
+}
+#glossary-index[data-type=tile]{
+    text-align: justify
+}
+#glossary-index[data-type=tile] p.tile{
+    margin: 30px 15px;
+    display: inline-block;
+}
+#glossary-index[data-type=tile] p.tile span a{
+    padding: 15px;
+    border: 1px solid grey;
+    background: #ffffff;
+}

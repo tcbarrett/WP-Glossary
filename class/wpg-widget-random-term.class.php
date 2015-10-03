@@ -1,6 +1,10 @@
 <?php
 class WPG_RandomTerm extends WP_Widget {
+    public static $options;
+    
 	public function __construct() {
+        self::$options = get_option( 'wp_glossary' );
+        self::$options["termtype"] = is_string(self::$options["termtype"]) ? self::$options["termtype"] : "glossary";
 		parent::__construct(
 			'wpg-random-term',
 			'Random Term [WPGlossary]',
@@ -72,7 +76,7 @@ class WPG_RandomTerm extends WP_Widget {
 		$numberposts = isset($instance['numberposts']) ? $instance['numberposts'] : 1;
 
 		$termargs = array(
-			'post_type'   => 'glossary',
+			'post_type'   => self::$options["termtype"],
 			'post_status' => 'publish',
 			'numberposts' => $numberposts,
 			'orderby'     => 'rand',

@@ -3,7 +3,11 @@
  * WP-Glossary Post Types
  */
 class WPG_Taxonomies Extends WPG{
+    public static $options;
+    
  	public function __construct() {
+        self::$options = get_option( 'wp_glossary' );
+        self::$options["termtype"] = is_string(self::$options["termtype"]) ? self::$options["termtype"] : "glossary";
 		add_action( 'init', array(&$this, 'register_taxonomies'), 0 );
 	}
 
@@ -21,7 +25,7 @@ class WPG_Taxonomies Extends WPG{
 			'new_item_name'     => __( 'New Glossary Group Name', 'wp-glossary' ),
 		);
 	
-		register_taxonomy( 'wpglossarygroup', array( 'glossary' ), array(
+		register_taxonomy( 'wpglossarygroup', array( self::$options["termtype"] ), array(
 			'hierarchical'      => false,
 			'labels'            => $labels,
 			'show_ui'           => true,

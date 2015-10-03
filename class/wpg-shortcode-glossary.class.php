@@ -1,8 +1,12 @@
 <?php
 class WPG_Shortcodes Extends WPG{
+    public static $options;
+    
 	public function __construct() {
+        self::$options = get_option( 'wp_glossary' );
+        self::$options["termtype"] = is_string(self::$options["termtype"]) ? self::$options["termtype"] : "glossary";
 		// Shortcode
-		add_shortcode( 'glossary', array(&$this, 'glossary') );
+		add_shortcode( "glossary", array(&$this, "glossary") );
 
 		// Help functions..
 		add_action( 'save_post',  array(&$this, 'save_post_check_for_glossary_usage'), 10, 2 );
@@ -43,7 +47,7 @@ class WPG_Shortcodes Extends WPG{
 		if( is_singular() && get_post_meta( $post->ID, 'wpg_update_term_usage') ):
 			// Find all glossary terms that have this post noted.
 			$args = array(
-				'post_type'   => 'glossary',
+				'post_type'   => self::$options["termtype"],
 				'numberposts' => -1,
 				'post_status' => 'publish',
 				'meta_query'  => array( array(
@@ -71,7 +75,8 @@ class WPG_Shortcodes Extends WPG{
 	/** */
 	public function glossary( $atts, $content='' ){
 		global $wpdb, $tcb_wpg_scripts, $wpg_glossary_count, $post, $wpg_doing_shortcode;
-
+/*var_dump($wpdb->posts);
+        die();*/
 		$wpg_glossary_count++;
 
 		// Get WP Glossary options
@@ -115,7 +120,7 @@ class WPG_Shortcodes Extends WPG{
 				$slug = sanitize_title( $text );
 			endif;
 			$slug      = strtolower($slug);
-			$sqlstring = "SELECT ID FROM {$wpdb->posts} WHERE post_name='%s' AND post_type='glossary' AND post_status='publish' LIMIT 1";
+        $sqlstring = "SELECT ID FROM {$wpdb->posts} WHERE post_name='%s' AND post_type='glossary' AND post_status='publish' LIMIT 1";
 			$id        = $wpdb->get_var( $wpdb->prepare($sqlstring, $slug) );
 			if( $id ):
 				$glossary = get_post( $id );

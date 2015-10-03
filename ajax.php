@@ -2,6 +2,7 @@
 add_action( 'wp_ajax_nopriv_wpg_get_term_details', 'wp_ajax_nopriv_wpg_get_term_details' );
 add_action( 'wp_ajax_wpg_get_term_details',        'wp_ajax_nopriv_wpg_get_term_details' );
 function wp_ajax_nopriv_wpg_get_term_details(){
+        
 
 	// Sanity and security checks:
 	//  - we have a termid (post id)
@@ -12,7 +13,7 @@ function wp_ajax_nopriv_wpg_get_term_details(){
 	if( isset($_POST['termid']) && $termid=$_POST['termid'] ):
 		$termid = intval( $termid );
 		$termob = get_post( $termid );
-		if( get_post_type($termob) && get_post_type($termob) == 'glossary' && in_array($termob->post_status, $statii) ):
+		if( get_post_type($termob) && get_post_type($termob) == "glossary" && in_array($termob->post_status, $statii) ):
 			$term = $termob;
 		endif;
 	endif;
