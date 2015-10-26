@@ -38,7 +38,8 @@ class WPG_Shortcode_ATOZ Extends WPG{
 			'ignore_sticky_posts' => 1,
 			'post_status'         => $statii,
 		);
-	
+		$args = apply_filters( 'wpg_atoz_query_args', $args );
+
 		// Restrict list to specific glossary group or groups
 		if( $group ):
 			$tax_query = array(
