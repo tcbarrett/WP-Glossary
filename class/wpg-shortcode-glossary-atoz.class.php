@@ -53,12 +53,12 @@ class WPG_Shortcode_ATOZ Extends WPG{
 		$list       = '<p>' . __('There are no glossary items.', 'wp-glossary') . '</p>';
 		$glossaries = get_posts( $args );
 		if( !count($glossaries) ) return $list;
-	
+
 		$atoz = array();
 		foreach( $glossaries as $post ) : setup_postdata( $post );
 			$title = get_the_title();
-			$alpha = strtolower( mb_substr($title, 0, 1, 'UTF-8') );
-	
+			$alpha = strtolower( apply_filters( 'wpg_atoz_alpha', mb_substr($title, 0, 1, 'UTF-8') ) );
+
 			$link  = '<span class="atoz-term-title">' . $title . '</span>'; // Default to text only
 			if( $linkopt != 'none' ):
 				$href   = apply_filters( 'wpg_term_link', get_post_permalink($post->ID) );
