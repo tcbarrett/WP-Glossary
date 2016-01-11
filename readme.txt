@@ -5,7 +5,7 @@ Plugin URL: http://www.tcbarrett.com/wordpress-plugins/wp-glossary/
 Tags: glossary, wp-glossary, dictionary, gloss, appendix, technical terms
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 3.1.2
+Stable tag: 3.1.3
 License: GPLv2 or later
 
 Create your own glossary of hot-linked terms, inside your own site!
@@ -72,6 +72,9 @@ I've listed a bunch on my website: [WP Glossary - Basic Shortcde Usage](http://w
 
 
 == Changelog ==
+
+= 3.1.3 =
+* Better i18n support (thanks s3rgiosan)
 
 = 3.1.2 =
 * UPD Tweak qtip invocation (thanks luckyfella73)
