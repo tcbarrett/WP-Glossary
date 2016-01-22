@@ -73,8 +73,11 @@ I've listed a bunch on my website: [WP Glossary - Basic Shortcde Usage](http://w
 
 == Changelog ==
 
+= 3.1.4 =
+* Fix PSR-4 loader conflict with older implementation.  
+
 = 3.1.3 =
-* Better i18n support (thanks s3rgiosan)
+* Better i18n support.
 
 = 3.1.2 =
 * UPD Tweak qtip invocation (thanks luckyfella73)

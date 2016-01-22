@@ -15,9 +15,5 @@
   ],
   "support": {
     "issues": "https://wordpress.org/support/plugin/wp-glossary"
-  },
-  "require": {
-    "php": ">=5.3",
-    "composer/installers": "~1.0"
   }
 }
