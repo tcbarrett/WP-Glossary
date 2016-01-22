@@ -15,5 +15,8 @@
   ],
   "support": {
     "issues": "https://wordpress.org/support/plugin/wp-glossary"
+  },
+  "require-dev": {
+    "dangoodman/composer-for-wordpress": "^1.0"
   }
 }
