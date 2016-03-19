@@ -1,3 +1,7 @@
+# Builds
+/build
+/docs
+
 # Numerous always-ignore extensions
 *.diff
 *.err
