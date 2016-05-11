@@ -1,0 +1,22 @@
+{
+  "name": "tcbarrett/wp-glossary",
+  "type": "wordpress-plugin",
+  "license": "GPL",
+  "description": "Create your own glossary of hot-linked terms, inside your own site!",
+  "homepage": "https://wordpress.org/plugins/wp-glossary/",
+  "authors": [
+    {
+      "name": "Tom Barrett",
+      "homepage": "http://www.tcbarrett.com/"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://wordpress.org/support/plugin/wp-glossary"
+  },
+  "require-dev": {
+    "dangoodman/composer-for-wordpress": "^1.0"
+  }
+}

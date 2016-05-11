@@ -36,7 +36,7 @@ class WPG{
 	}
 
 	public function localisation(){
-		load_plugin_textdomain( 'wp-glossary', false, 'wp-glossary' . '/lang/' );
+		\load_plugin_textdomain( 'wp-glossary', false, dirname( dirname( \plugin_basename( __FILE__ ) ) ) . '/lang/' );
 	}
 
 	private function register_post_types(){
@@ -48,7 +48,7 @@ class WPG{
 		require_once( $this->base() . '/wpg-taxonomies.class.php' );
 		new WPG_Taxonomies();
 	}
-	
+
 	private function add_shortcodes(){
 		require_once( $this->base() . '/wpg-shortcode-glossary.class.php' );
 		new WPG_Shortcodes();
@@ -140,7 +140,7 @@ class WPG{
 		endif;
 	}
 
-	/** 
+	/**
 	 * Translation support
 	 */
 	public function wpg_term_link( $url ){
